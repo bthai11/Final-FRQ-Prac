@@ -38,8 +38,9 @@ public class VenMac{
     //this method should return a random drink from the arrayList for the user. and remove it from the vending machine. 
     //Challenge, prompt the user to input a price and  give them change  if they have enough, and reject them if theydont.
     public Drink getDrink(){
-    
-        return null;// Change this when you write the method.
+        int randNum = (int)(Math.random()*stock.size());
+        Drink ret = stock.remove(randNum);
+        return ret;
     }
 
     //twoFor1
@@ -47,7 +48,16 @@ public class VenMac{
         // Make sure your method does not go out of bounds. It shouldd return a string for example: "You got Coke and Mountain Dew!"
 
         public String twoFor1(){
-            return null;//Change this when you write your method.
+            if(stock.size()==0){ //checks if no more drinks
+                return "Sorry no more drinks";
+            }
+            else if(stock.size()==1){ //checks ifonly one drink
+                return "Only one drink here, received: " + stock.remove(0).getName();
+            }
+            int randNum = (int)(Math.random()*stock.size()-1);//-1 so we dont go to the end.
+            String result ="You got "; // Creates new string
+            result += stock.remove(randNum).getName() +  " and " + stock.remove(randNum).getName(); //removes and adds to String. 
+            return result;//Change this when you write your method.
         }
 
 }

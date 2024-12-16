@@ -49,6 +49,8 @@ public class Main {
     //PART 4 // UNCOMMENT THIS ONCE YOU FINISH THE OTHER PARTS.
     VenMac test = new VenMac();
 
+    System.out.println(test.getDrink().getName()); //testing
+    System.out.println(test.twoFor1()); //testing
 
 
     }
